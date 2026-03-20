@@ -31,33 +31,29 @@ This project was built as both:
 - **JavaScript (Vanilla)** – Dynamic functionality and interactivity  
 - **LocalStorage API** – Persistent cart system  
 
----
-
 ## 📁 Project Structure
 
+```
 /desert-crown-luxury
 │
-├── index.html # Home page
-├── shop.html # Product listing page
-├── product.html # Product details page
-├── cart.html # Shopping cart page
-├── checkout.html # Checkout page
-├── about.html # About the brand
-├── contact.html # Contact page
+├── index.html          # Home page
+├── shop.html           # Product listing page
+├── product.html        # Product details page
+├── cart.html           # Shopping cart page
+├── checkout.html       # Checkout page
+├── about.html          # About the brand
+├── contact.html        # Contact page
 │
 ├── /css
-│ └── styles.css # Main stylesheet
+│   └── styles.css      # Main stylesheet
 │
 ├── /js
-│ ├── app.js # General functionality
-│ ├── cart.js # Cart logic
-│ ├── products.js # Product data
+│   ├── app.js          # General functionality
+│   ├── cart.js         # Cart logic
+│   ├── products.js     # Product data
 │
-├── /images # Product and UI images
-
-
-
----
+├── /images             # Product and UI images
+```
 
 ## 🚀 Features
 
