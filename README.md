@@ -1,4 +1,4 @@
-# 🏆 Desert Crown Luxury – E-commerce Website
+<img width="950" height="439" alt="image" src="https://github.com/user-attachments/assets/a2545c9b-5587-44d9-8a4b-0ec181bb6e45" /># 🏆 Desert Crown Luxury – E-commerce Website
 
 A premium, Dubai-inspired luxury e-commerce website built using **HTML, CSS, and Vanilla JavaScript**. This project showcases a high-end shopping experience focused on **luxury watches and Khanzu (Thobes)**, emphasizing elegance, interactivity, and modern UI/UX design.
 
@@ -101,12 +101,26 @@ Each page is linked through a consistent navigation bar for seamless user experi
 
 > Full-page screenshots of each page are included in the documentation:
 - Home Page
+  <img width="950" height="439" alt="image" src="https://github.com/user-attachments/assets/c3a120ae-7cf6-4a88-a261-9bc90768ac33" />
+  <img width="947" height="431" alt="image" src="https://github.com/user-attachments/assets/7ef1c59a-0475-4379-a9fb-44a9a6a72896" />
+
+
 - Shop Page
+  <img width="947" height="436" alt="image" src="https://github.com/user-attachments/assets/d55c7f54-2e7b-43e2-8aa8-f534dba771ba" />
+  <img width="947" height="434" alt="image" src="https://github.com/user-attachments/assets/88d7c865-bbb9-4ecb-8525-58c69f6a2e48" />
+  <img width="948" height="437" alt="image" src="https://github.com/user-attachments/assets/f5076312-ce25-4006-b716-06e7855a881a" />
+
 - Product Page
 - Cart Page
+  <img width="944" height="425" alt="image" src="https://github.com/user-attachments/assets/185c8fd3-8fa6-4b0f-b955-efb014ea8442" />
+
 - Checkout Page
 - About Page
+  <img width="944" height="439" alt="image" src="https://github.com/user-attachments/assets/9175c3fb-4a56-4c66-bd7a-ddb51aef26e9" />
+
 - Contact Page
+  <img width="947" height="418" alt="image" src="https://github.com/user-attachments/assets/ad3e8225-9b31-4df6-b197-2ff78b8ffa57" />
+
 
 ---
 
