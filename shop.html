@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Desert Crown Luxury - Shop</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/products.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body data-page="shop">
+  <div id="pageLoader" aria-label="Loading" aria-hidden="false">
+    <div class="loaderSpinner" aria-hidden="true"></div>
+  </div>
+
+  <lux-navbar></lux-navbar>
+
+  <main class="section">
+    <div class="container">
+      <div class="gridTop reveal" style="margin-bottom: 18px;">
+        <div>
+          <div class="kicker">Shop</div>
+          <div class="h2">Luxury Watches & Khanzu</div>
+          <p class="sub">Filter by category and price, sort by premium criteria, then add items to your cart.</p>
+        </div>
+        <div class="resultMeta" id="resultMeta">Loading…</div>
+      </div>
+
+      <div class="shopGrid">
+        <aside class="panel reveal">
+          <div class="panelHeader">
+            <strong>Filters</strong>
+          </div>
+          <div class="panelBody">
+            <div class="field">
+              <div class="label">Category</div>
+              <select id="filterCategory" aria-label="Filter by category">
+                <option value="all">All</option>
+                <option value="watches">Watches</option>
+                <option value="khanzu">Khanzu</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <div class="label">Price Range (AED)</div>
+              <div class="rangeRow">
+                <input id="filterMinPrice" type="number" inputmode="numeric" min="0" step="10" value="0" aria-label="Minimum price" />
+                <input id="filterMaxPrice" type="number" inputmode="numeric" min="0" step="10" value="9999" aria-label="Maximum price" />
+              </div>
+              <div class="sub" style="font-size:13px; margin-top:6px;">Set your luxury budget.</div>
+            </div>
+
+            <div class="field" style="margin-bottom:0;">
+              <div class="label">Sorting</div>
+              <select id="sortSelect" aria-label="Sort products">
+                <option value="featured">Featured</option>
+                <option value="low">Price: Low to High</option>
+                <option value="high">Price: High to Low</option>
+                <option value="rating">Top Rated</option>
+              </select>
+            </div>
+          </div>
+        </aside>
+
+        <section>
+          <div class="productGrid" id="productGrid" aria-label="Product listing"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- Quick View Modal -->
+  <div class="modal" id="quickViewModal" aria-hidden="true">
+    <div class="modal__dialog">
+      <button class="modal__close" type="button" data-close-modal aria-label="Close quick view">✕</button>
+      <div class="modal__content" id="quickViewBody"></div>
+    </div>
+  </div>
+
+  <lux-footer></lux-footer>
+</body>
+</html>
+

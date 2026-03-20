@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Desert Crown Luxury - Contact</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/main.js" defer></script>
+</head>
+<body data-page="contact">
+  <div id="pageLoader" aria-label="Loading" aria-hidden="false">
+    <div class="loaderSpinner" aria-hidden="true"></div>
+  </div>
+
+  <lux-navbar></lux-navbar>
+
+  <main class="section">
+    <div class="container">
+      <div class="gridTop reveal" style="margin-bottom: 18px;">
+        <div>
+          <div class="kicker">Contact</div>
+          <div class="h2">Let’s talk luxury</div>
+          <p class="sub">Send a message and we’ll respond soon. This is a demo form for your assignment.</p>
+        </div>
+      </div>
+
+      <div class="shopGrid" style="grid-template-columns: 1.1fr .9fr;">
+        <section class="panel reveal">
+          <div class="panelHeader"><strong>Message Form</strong></div>
+          <div class="panelBody">
+            <form id="contactForm">
+              <div class="formGrid">
+                <div class="field">
+                  <div class="label">Your name</div>
+                  <input type="text" name="name" required placeholder="Amina" />
+                </div>
+                <div class="field">
+                  <div class="label">Email</div>
+                  <input type="email" name="email" required placeholder="amina@email.com" />
+                </div>
+                <div class="field" style="grid-column: 1 / -1;">
+                  <div class="label">Message</div>
+                  <input type="text" name="message" required placeholder="Tell us about what you’re looking for…" />
+                </div>
+              </div>
+              <div class="formActions">
+                <button class="btn btn--primary" type="submit">Send Message</button>
+                <a class="btn btn--ghost" href="about.html">Our Story</a>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <aside class="panel reveal">
+          <div class="panelHeader"><strong>Brand Contact</strong></div>
+          <div class="panelBody">
+            <div class="keyPoints">
+              <div class="point">
+                <div class="pointDot" aria-hidden="true"></div>
+                <span>Dubai, United Arab Emirates</span>
+              </div>
+              <div class="point">
+                <div class="pointDot" aria-hidden="true"></div>
+                <span>hello@desertcrownluxury.example</span>
+              </div>
+              <div class="point">
+                <div class="pointDot" aria-hidden="true"></div>
+                <span>Mon–Sat: 10:00–20:00 (demo)</span>
+              </div>
+            </div>
+
+            <div style="height:18px"></div>
+            <div class="sub">
+              For this assignment, messages are not sent anywhere—yet the UI responds instantly with a premium toast.
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <lux-footer></lux-footer>
+</body>
+</html>
+

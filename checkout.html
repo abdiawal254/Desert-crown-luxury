@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Desert Crown Luxury - Checkout</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/products.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body data-page="checkout">
+  <div id="pageLoader" aria-label="Loading" aria-hidden="false">
+    <div class="loaderSpinner" aria-hidden="true"></div>
+  </div>
+
+  <lux-navbar></lux-navbar>
+
+  <main class="section">
+    <div class="container">
+      <div class="gridTop reveal" style="margin-bottom:18px;">
+        <div>
+          <div class="kicker">Checkout</div>
+          <div class="h2">Luxury Payment (Demo)</div>
+          <p class="sub">This is a fake payment system for your assignment—no real charges.</p>
+        </div>
+        <div class="resultMeta">Secure-feel UI with instant confirmation.</div>
+      </div>
+
+      <div class="shopGrid" style="grid-template-columns: 1fr 420px;">
+        <section class="panel reveal">
+          <div class="panelHeader">
+            <strong>Payment Details</strong>
+          </div>
+          <div class="panelBody">
+            <div class="cartList" id="checkoutSummary" aria-label="Order summary"></div>
+
+            <hr style="border:0;border-top:1px solid rgba(226,180,90,.16);margin:18px 0;" />
+
+            <form id="checkoutForm">
+              <div class="formGrid">
+                <div class="field">
+                  <div class="label">Full name</div>
+                  <input type="text" name="fullName" required placeholder="Amina Al Qamar" />
+                </div>
+                <div class="field">
+                  <div class="label">Email</div>
+                  <input type="email" name="email" required placeholder="amina@email.com" />
+                </div>
+                <div class="field" style="grid-column: 1 / -1;">
+                  <div class="label">Address</div>
+                  <input type="text" name="address" required placeholder="Downtown Dubai, Gold Souk Road" />
+                </div>
+                <div class="field">
+                  <div class="label">City</div>
+                  <input type="text" name="city" required placeholder="Dubai" />
+                </div>
+                <div class="field">
+                  <div class="label">Payment method</div>
+                  <select name="paymentMethod" aria-label="Payment method">
+                    <option value="card" selected>Card (Demo)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div style="height:14px"></div>
+
+              <div class="formGrid">
+                <div class="field">
+                  <div class="label">Card number</div>
+                  <input type="tel" name="cardNumber" inputmode="numeric" required placeholder="4242 4242 4242 4242" />
+                </div>
+                <div class="field">
+                  <div class="label">Expiry</div>
+                  <input type="text" name="expiry" required placeholder="10/29" />
+                </div>
+                <div class="field">
+                  <div class="label">CVV</div>
+                  <input type="tel" name="cvv" inputmode="numeric" required placeholder="123" />
+                </div>
+                <div class="field">
+                  <div class="label">Promo code (optional)</div>
+                  <input type="text" name="promo" placeholder="DCL-GOLD" />
+                </div>
+              </div>
+
+              <div class="formActions">
+                <button class="btn btn--primary" type="submit">Pay Now</button>
+                <a class="btn btn--ghost" href="cart.html">Back to Cart</a>
+              </div>
+
+              <div style="margin-top:14px;" data-processing hidden>
+                <div class="sub">Processing your payment…</div>
+                <div style="height:10px;"></div>
+                <div class="loaderSpinner" aria-hidden="true" style="width:34px;height:34px;"></div>
+              </div>
+
+              <div style="margin-top:14px;" data-result hidden></div>
+            </form>
+          </div>
+        </section>
+
+        <aside class="panel reveal summaryCard" style="position:sticky; top:92px;">
+          <div class="kicker">Total</div>
+          <div class="summaryRow">
+            <span>Subtotal</span>
+            <strong id="checkoutSubtotal">—</strong>
+          </div>
+          <div class="summaryRow">
+            <span>Delivery</span>
+            <strong>—</strong>
+          </div>
+          <div class="summaryRow">
+            <span>Luxury Service</span>
+            <strong>Included</strong>
+          </div>
+          <div class="summaryTotal">
+            <span>Total</span>
+            <span id="checkoutTotal">—</span>
+          </div>
+          <div class="sub" style="margin-top:12px;">
+            Tip: Your order completes instantly for this assignment.
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <lux-footer></lux-footer>
+</body>
+</html>
+

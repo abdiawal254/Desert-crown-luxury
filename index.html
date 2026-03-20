@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Desert Crown Luxury - Home</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/products.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body data-page="home">
+  <div id="pageLoader" aria-label="Loading" aria-hidden="false">
+    <div class="loaderSpinner" aria-hidden="true"></div>
+  </div>
+
+  <lux-navbar></lux-navbar>
+
+  <header class="hero">
+    <div class="container heroGrid">
+      <div class="heroCard">
+        <div class="kicker reveal">Dubai Night Elegance</div>
+        <h1 class="h1 reveal">Desert Crown Luxury</h1>
+        <p class="sub reveal">
+          Premium watches and khanzu crafted for modern celebrations—gold accents, deep tones, and a confident desert-luxury mood.
+        </p>
+
+        <div style="height:14px"></div>
+
+        <div class="heroStats reveal">
+          <div class="stat">
+            <strong>Gold Accents</strong>
+            <span>Signature finishing with elegant warmth.</span>
+          </div>
+          <div class="stat">
+            <strong>Premium Styling</strong>
+            <span>Clean spacing, refined typography, smooth motion.</span>
+          </div>
+        </div>
+
+        <div style="height:18px"></div>
+
+        <div class="chip reveal">
+          <strong>Collection</strong>
+          <span>Watches + Khanzu</span>
+        </div>
+
+        <div style="height:18px"></div>
+        <div class="formActions" style="margin-top:0;">
+          <a class="btn btn--primary" href="shop.html">Shop the Collection</a>
+          <a class="btn btn--ghost" href="about.html">Our Story</a>
+        </div>
+      </div>
+
+      <div class="heroArt reveal" aria-hidden="true">
+        <img
+          class="heroImg"
+          alt=""
+          src="https://images.unsplash.com/photo-1760779887188-a49c256860d6?fm=jpg&q=60&w=1600&auto=format&fit=crop"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </header>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="gridTop">
+        <div>
+          <div class="kicker reveal">Featured Picks</div>
+          <div class="h2 reveal">Modern Luxury, Desert Inspired</div>
+          <p class="sub reveal">Explore radiant watches and elegant khanzu designed for Dubai-inspired evenings.</p>
+        </div>
+        <div class="resultMeta reveal">Tip: Use dark/light mode for the perfect vibe.</div>
+      </div>
+
+      <div class="productGrid" id="featuredGrid" aria-label="Featured products"></div>
+    </div>
+  </section>
+
+  <lux-footer></lux-footer>
+
+  <script>
+    // Small inline helper: show featured products on home without needing extra components.
+    window.addEventListener("DOMContentLoaded", function () {
+      function formatMoney(n) {
+        return new Intl.NumberFormat("en-US", { style: "currency", currency: "AED", maximumFractionDigits: 0 }).format(n);
+      }
+      function escapeHtml(str) {
+        return String(str)
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+      }
+      function productMonogram(p) {
+        return (p.symbol || p.name || "?").slice(0, 2).toUpperCase();
+      }
+
+      const grid = document.getElementById("featuredGrid");
+      if (!grid || !window.PRODUCTS) return;
+      const list = window.PRODUCTS.slice().sort((a, b) => (b.rating || 0) - (a.rating || 0)).slice(0, 3);
+      grid.innerHTML = "";
+      list.forEach((p) => {
+        const card = document.createElement("article");
+        card.className = "productCard reveal";
+        card.style.cssText = `--accent: ${p.accent};`;
+        card.innerHTML = `
+          <div class="productArt" aria-hidden="true">
+            <img class="productImg" alt="" src="${p.image || ""}" loading="lazy" />
+          </div>
+          <div class="productTopRow">
+            <h3 class="productTitle">${escapeHtml(p.name)}</h3>
+            <div class="badge">${escapeHtml(p.tag || p.category)}</div>
+          </div>
+          <div class="price">${formatMoney(p.price)}</div>
+          <div class="prodDesc">${escapeHtml(p.description)}</div>
+          <div class="productActions">
+            <a class="btn btn-sm btn--primary" href="product.html?id=${encodeURIComponent(p.id)}">View</a>
+            <a class="btn btn-sm btn--ghost" href="shop.html">Shop</a>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+
+      // Note: Cart + toasts are handled by main.js on shop/cart pages.
+    });
+  </script>
+</body>
+</html>
+

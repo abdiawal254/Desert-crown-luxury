@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Desert Crown Luxury - Cart</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/products.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body data-page="cart">
+  <div id="pageLoader" aria-label="Loading" aria-hidden="false">
+    <div class="loaderSpinner" aria-hidden="true"></div>
+  </div>
+
+  <lux-navbar></lux-navbar>
+
+  <main class="section">
+    <div class="container">
+      <div class="gridTop reveal" style="margin-bottom:18px;">
+        <div>
+          <div class="kicker">Cart</div>
+          <div class="h2">Your Desert Crown Selection</div>
+          <p class="sub">Update quantities, remove items, and review your total in real time.</p>
+        </div>
+        <div class="resultMeta">Local cart storage via <code>localStorage</code>.</div>
+      </div>
+
+      <div class="shopGrid" style="grid-template-columns: 1fr 380px;">
+        <section class="panel reveal">
+          <div class="panelHeader">
+            <strong>Items</strong>
+          </div>
+          <div class="panelBody">
+            <div id="cartEmpty" style="display:none;">
+              <p class="sub">Your cart is empty. Start with a luxury watch or a refined khanzu.</p>
+              <div style="margin-top:14px;">
+                <a class="btn btn--primary" href="shop.html">Shop Now</a>
+              </div>
+            </div>
+            <div class="cartList" id="cartItems" aria-label="Cart items"></div>
+          </div>
+        </section>
+
+        <aside class="panel reveal summaryCard" style="position:sticky; top:92px;">
+          <div class="kicker">Summary</div>
+          <div class="summaryRow">
+            <span>Subtotal</span>
+            <strong id="cartSubtotal">—</strong>
+          </div>
+          <div class="summaryRow">
+            <span>Delivery</span>
+            <strong>—</strong>
+          </div>
+          <div class="summaryRow">
+            <span>Luxury Service</span>
+            <strong>Included</strong>
+          </div>
+          <div class="summaryTotal">
+            <span>Total</span>
+            <span id="cartTotal">—</span>
+          </div>
+          <div class="formActions">
+            <a id="toCheckout" class="btn btn--primary" href="checkout.html">Proceed to Checkout</a>
+          </div>
+          <div style="margin-top:14px;">
+            <button id="clearCartBtn" class="btn btn--danger" type="button">Clear Cart</button>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <lux-footer></lux-footer>
+
+  <script>
+    // Cart-only extras: clear cart (not required in main.js to keep logic tight).
+    (function () {
+      const btn = document.getElementById("clearCartBtn");
+      if (!btn) return;
+      btn.addEventListener("click", () => {
+        localStorage.removeItem("dcl_cart_v1");
+        // main.js will re-render via event handlers on quantity changes; force reload for consistency.
+        location.reload();
+      });
+    })();
+  </script>
+</body>
+</html>
+
